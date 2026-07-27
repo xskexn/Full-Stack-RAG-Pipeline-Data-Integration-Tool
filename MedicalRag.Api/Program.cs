@@ -1,3 +1,4 @@
+// Assembles database connection, routing and api enpoints into web server
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,9 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+// creates shared instance of service database  
 builder.Services.AddSingleton<VectorStoreService>();
 builder.Services.AddHttpClient<DocumentIngestionService>();
 
+// locks in registred services above and creates the application 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
@@ -26,16 +29,17 @@ app.Run();
 
 static void InitializeDatabase(string connectionString)
 {
+    // opens direct connection to postgresSQL using NpgsqlConnection
     using var conn = new NpgsqlConnection(connectionString);
     conn.Open();
 
-    // 1. Enable pgvector extension
+    // enables pgvector extension
     using (var cmd = new NpgsqlCommand("CREATE EXTENSION IF NOT EXISTS vector;", conn))
     {
         cmd.ExecuteNonQuery();
     }
 
-    // 2. Create medical document chunks table
+    // creates medical document chunks table 
     var createTableSql = @"
         CREATE TABLE IF NOT EXISTS medical_document_chunks (
             id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
