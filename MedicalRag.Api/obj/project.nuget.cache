@@ -1,31 +1,33 @@
 {
   "version": 2,
-  "dgSpecHash": "a2ZgWXrCKx8=",
+  "dgSpecHash": "U52IpO9peyg=",
   "success": true,
   "projectFilePath": "D:\\Docs\\KensHiddenCodebase\\Rag System Data Integration Tool\\MedicalRag.Api\\MedicalRag.Api.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kendr\\.nuget\\packages\\azure.ai.openai\\2.2.0-beta.1\\azure.ai.openai.2.2.0-beta.1.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\azure.ai.openai\\2.9.0-beta.1\\azure.ai.openai.2.9.0-beta.1.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\azure.core\\1.51.1\\azure.core.1.51.1.nupkg.sha512",
     "C:\\Users\\kendr\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.10\\microsoft.aspnetcore.openapi.10.0.10.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\9.0.0\\microsoft.bcl.asyncinterfaces.9.0.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\10.0.2\\microsoft.bcl.asyncinterfaces.10.0.2.nupkg.sha512",
     "C:\\Users\\kendr\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.extensions.ai\\9.3.0-preview.1.25114.11\\microsoft.extensions.ai.9.3.0-preview.1.25114.11.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.extensions.ai.abstractions\\9.3.0-preview.1.25114.11\\microsoft.extensions.ai.abstractions.9.3.0-preview.1.25114.11.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.extensions.vectordata.abstractions\\9.0.0-preview.1.25078.1\\microsoft.extensions.vectordata.abstractions.9.0.0-preview.1.25078.1.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.extensions.ai\\10.5.0\\microsoft.extensions.ai.10.5.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.extensions.ai.abstractions\\10.5.0\\microsoft.extensions.ai.abstractions.10.5.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.extensions.ai.openai\\10.5.0\\microsoft.extensions.ai.openai.10.5.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.extensions.vectordata.abstractions\\10.1.0\\microsoft.extensions.vectordata.abstractions.10.1.0.nupkg.sha512",
     "C:\\Users\\kendr\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel\\1.38.0\\microsoft.semantickernel.1.38.0.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.abstractions\\1.38.0\\microsoft.semantickernel.abstractions.1.38.0.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.connectors.azureopenai\\1.38.0\\microsoft.semantickernel.connectors.azureopenai.1.38.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel\\1.78.0\\microsoft.semantickernel.1.78.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.abstractions\\1.78.0\\microsoft.semantickernel.abstractions.1.78.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.connectors.azureopenai\\1.78.0\\microsoft.semantickernel.connectors.azureopenai.1.78.0.nupkg.sha512",
     "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.connectors.ollama\\1.38.0-alpha\\microsoft.semantickernel.connectors.ollama.1.38.0-alpha.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.connectors.openai\\1.38.0\\microsoft.semantickernel.connectors.openai.1.38.0.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.core\\1.38.0\\microsoft.semantickernel.core.1.38.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.connectors.openai\\1.78.0\\microsoft.semantickernel.connectors.openai.1.78.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\microsoft.semantickernel.core\\1.78.0\\microsoft.semantickernel.core.1.78.0.nupkg.sha512",
     "C:\\Users\\kendr\\.nuget\\packages\\npgsql\\10.0.3\\npgsql.10.0.3.nupkg.sha512",
     "C:\\Users\\kendr\\.nuget\\packages\\ollamasharp\\5.0.7\\ollamasharp.5.0.7.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\openai\\2.2.0-beta.1\\openai.2.2.0-beta.1.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\openai\\2.10.0\\openai.2.10.0.nupkg.sha512",
     "C:\\Users\\kendr\\.nuget\\packages\\pdfpig\\0.1.15\\pdfpig.0.1.15.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\system.clientmodel\\1.2.1\\system.clientmodel.1.2.1.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\system.memory.data\\6.0.0\\system.memory.data.6.0.0.nupkg.sha512",
-    "C:\\Users\\kendr\\.nuget\\packages\\system.numerics.tensors\\8.0.0\\system.numerics.tensors.8.0.0.nupkg.sha512"
+    "C:\\Users\\kendr\\.nuget\\packages\\pgvector\\0.3.2\\pgvector.0.3.2.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\system.clientmodel\\1.10.0\\system.clientmodel.1.10.0.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\system.memory.data\\10.0.3\\system.memory.data.10.0.3.nupkg.sha512",
+    "C:\\Users\\kendr\\.nuget\\packages\\system.numerics.tensors\\10.0.6\\system.numerics.tensors.10.0.6.nupkg.sha512"
   ],
   "logs": [
     {
@@ -36,18 +38,6 @@
       "warningLevel": 1,
       "filePath": "D:\\Docs\\KensHiddenCodebase\\Rag System Data Integration Tool\\MedicalRag.Api\\MedicalRag.Api.csproj",
       "libraryId": "Microsoft.OpenApi",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1904",
-      "level": "Warning",
-      "message": "Package 'Microsoft.SemanticKernel.Core' 1.38.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-2ww3-72rp-wpp4",
-      "projectPath": "D:\\Docs\\KensHiddenCodebase\\Rag System Data Integration Tool\\MedicalRag.Api\\MedicalRag.Api.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\Docs\\KensHiddenCodebase\\Rag System Data Integration Tool\\MedicalRag.Api\\MedicalRag.Api.csproj",
-      "libraryId": "Microsoft.SemanticKernel.Core",
       "targetGraphs": [
         "net10.0"
       ]

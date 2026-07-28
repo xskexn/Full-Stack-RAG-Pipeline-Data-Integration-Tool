@@ -20,7 +20,7 @@ public class RagController : ControllerBase
     public RagController(
         VectorStoreService vectorStore,
         DocumentIngestionService ingestionService,
-        IchatCompletionService chatService,
+        IChatCompletionService chatService,
         HttpClient httpClient
     )
     {
@@ -80,8 +80,8 @@ public class RagController : ControllerBase
         var response = await _httpClient.PostAsJsonAsync("http://localhost:11434/api/embeddings", requestPayload);
         response.EnsureSuccessStatusCode();
 
-        using var jsonDoc = await System.Text.Json.JsonDocument.ParseAsync(await reponse.Content.ReadAsStreamAsync());
-        var embeddingElement = jsonDoc.RootElement.getProperty("embedding");
+        using var jsonDoc = await System.Text.Json.JsonDocument.ParseAsync(await response.Content.ReadAsStreamAsync());
+        var embeddingElement = jsonDoc.RootElement.GetProperty("embedding");
 
         var embeddings = new float[embeddingElement.GetArrayLength()];
         int idx = 0;

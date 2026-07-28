@@ -1,5 +1,4 @@
 // Database layer for PostgreSQL keeping SQL commands isolated from core logic
-
 using Npgsql;
 using Pgvector;
 
@@ -16,7 +15,7 @@ public class VectorStoreService
         _connectionString = config.GetConnectionString("DefaultConnection")!;
     }
     // extract specific chunks of medical text, metadata and mathetical vector storing it storing into the db
-    public async Task SaveChunkAsync(string title, string pmid, int index, string text, float[] embedding)
+    public async Task SaveChunkAsync(string title, string? pmid, int index, string text, float[] embedding)
     {
         await using var conn = new NpgsqlConnection(_connectionString);
         await conn.OpenAsync();

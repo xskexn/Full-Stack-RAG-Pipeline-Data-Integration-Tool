@@ -52,7 +52,7 @@
             },
             "Microsoft.SemanticKernel": {
               "target": "Package",
-              "version": "[1.38.0, )"
+              "version": "[1.78.0, )"
             },
             "Microsoft.SemanticKernel.Connectors.Ollama": {
               "target": "Package",
@@ -65,6 +65,10 @@
             "PdfPig": {
               "target": "Package",
               "version": "[0.1.15, )"
+            },
+            "Pgvector": {
+              "target": "Package",
+              "version": "[0.3.2, )"
             }
           },
           "imports": [

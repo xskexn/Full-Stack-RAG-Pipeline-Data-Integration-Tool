@@ -1,6 +1,7 @@
 // Assembles database connection, routing and api enpoints into web server
 using Npgsql;
-using Microsoft.SemanticKernel; 
+using Microsoft.SemanticKernel;
+using MedicalRag.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,12 +10,14 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 // creates shared instance of service database  
 builder.Services.AddSingleton<VectorStoreService>();
-// adds generic HttpClient for the controller
 builder.Services.AddHttpClient<DocumentIngestionService>();
+// adds generic HttpClient for the controller
+#pragma warning disable SKEXP0070
+builder.Services.AddHttpClient(); 
 builder.Services.AddKernel().AddOllamaChatCompletion(
-    modelId: "llama3.2",
-    enpoints: new Uri("http://localhost:11434") 
-);
+        modelId: "llama3.2",
+        endpoint: new Uri("http://localhost:11434"));
+#pragma warning restore SKEXP0070
 
 // locks in registred services above and creates the application 
 var app = builder.Build();
