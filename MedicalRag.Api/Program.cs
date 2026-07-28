@@ -1,14 +1,20 @@
 // Assembles database connection, routing and api enpoints into web server
 using Npgsql;
+using Microsoft.SemanticKernel; 
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+// add services to the container
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 // creates shared instance of service database  
 builder.Services.AddSingleton<VectorStoreService>();
+// adds generic HttpClient for the controller
 builder.Services.AddHttpClient<DocumentIngestionService>();
+builder.Services.AddKernel().AddOllamaChatCompletion(
+    modelId: "llama3.2",
+    enpoints: new Uri("http://localhost:11434") 
+);
 
 // locks in registred services above and creates the application 
 var app = builder.Build();
