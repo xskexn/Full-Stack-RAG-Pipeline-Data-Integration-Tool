@@ -30,17 +30,45 @@ public class RagController : ControllerBase
         _chatService = chatService;
         _httpClient = httpClient;
     }
+    [HttpPost("upload")]
+    public async Task<IActionResult> UploadDocument(IFormFile file, [FromForm] string title, [FromForm] string? pmid)
+    {
+        if (file == null || file.Length == 0) return BadRequest("No file uploaded.\nPlease upload a valid .pdf file.");
+
+        using var stream = file.OpenReadStream();
+        var chunkCount = await _ingestionService.ProcessPdfAsync(stream, title, pmid);
+
+        return Ok(new { Message = "Document processed successfully!", ChunksSaved = chunkCount }); 
+    }
+
     // appends ask to base route in the final post endpoint 
     [HttpPost("ask")]
     // extracts json body from http request and maps to request variable
     public async Task<IActionResult> AskQuestion([FromBody] QuestionRequest request)
     {
         // Generate query embedding via Ollama
-        // Fetch top-K similar medical chunks from pgvector
-        // Pass context + question to Llama 3.2 via Semantic Kernel
-        // Return response with source citations
+        var queryEmbedding = await GenerateQueryEmbeddingAsync(request.Question);
         
-        return Ok(new { Answer = "Sample grounded medical answer.", Sources = new[] { "Paper_1.pdf" } });
+        // Fetch top-K similar medical chunks from pgvector
+        var topContext = await _vectorStore.SearchSimilarChunksAsync(queryEmbedding, 3);
+        var combinedContext = string.Join("\n\n", topContext); 
+        
+        // assemble grounded prompt
+        var systemPrompt = $"""
+                    You are a medical research assistant. Answer the user's prompt strictly using the provided paper excerpts. 
+                    If the information is not explicitly present in the retrieved chunks, state: 'Information not found in the provided medical literature.'
+                    
+                    CONTEXT:
+                    {combinedContext}
+                    """;
+        var chatHistory = new ChatHistory(systemPrompt);
+        chatHistory.AddUserMessage(request.Question);
+
+        // Pass context + question to Llama 3.2 via Semantic Kernel
+        var response = await _chatService.GetChatMessageContentAsync(chatHistory);
+        
+        // Return response with source citations
+        return Ok(new { Answer = response.Content, Sources = topContext });
     }
 }
 
