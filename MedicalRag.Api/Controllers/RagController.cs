@@ -30,7 +30,9 @@ public class RagController : ControllerBase
         _chatService = chatService;
         _httpClient = httpClient;
     }
+
     [HttpPost("upload")]
+
     public async Task<IActionResult> UploadDocument(IFormFile file, [FromForm] string title, [FromForm] string? pmid)
     {
         if (file == null || file.Length == 0) return BadRequest("No file uploaded.\nPlease upload a valid .pdf file.");
@@ -70,7 +72,29 @@ public class RagController : ControllerBase
         // Return response with source citations
         return Ok(new { Answer = response.Content, Sources = topContext });
     }
+
+    // helper method to convert string question into a vector array
+    private async Task<float[]> GenerateQueryEmbeddingAsync(string text)
+    {
+        var requestPayload = new { model = "nomic-embed-text", prompt = text };
+        var response = await _httpClient.PostAsJsonAsync("http://localhost:11434/api/embeddings", requestPayload);
+        response.EnsureSuccessStatusCode();
+
+        using var jsonDoc = await System.Text.Json.JsonDocument.ParseAsync(await reponse.Content.ReadAsStreamAsync());
+        var embeddingElement = jsonDoc.RootElement.getProperty("embedding");
+
+        var embeddings = new float[embeddingElement.GetArrayLength()];
+        int idx = 0;
+        foreach (var val in embeddingElement.EnumerateArray())
+        {
+            embeddings[idx++] = val.GetSingle();
+        }
+        return embeddings;
+    }
+
 }
+
+
 
 // Defining datatype of expected from this endpoint
 public record QuestionRequest(string Question);
