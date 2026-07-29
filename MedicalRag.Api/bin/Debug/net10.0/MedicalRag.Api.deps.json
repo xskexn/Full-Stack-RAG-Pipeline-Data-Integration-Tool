@@ -12,7 +12,7 @@
           "Microsoft.Extensions.AI": "10.8.3",
           "Microsoft.Extensions.AI.Abstractions": "10.8.3",
           "Microsoft.SemanticKernel": "1.78.0",
-          "Microsoft.SemanticKernel.Connectors.Ollama": "1.38.0-alpha",
+          "Microsoft.SemanticKernel.Connectors.OpenAI": "1.78.0",
           "Npgsql": "10.0.3",
           "PdfPig": "0.1.15",
           "Pgvector": "0.3.2"
@@ -162,20 +162,6 @@
           }
         }
       },
-      "Microsoft.SemanticKernel.Connectors.Ollama/1.38.0-alpha": {
-        "dependencies": {
-          "Microsoft.Extensions.AI": "10.8.3",
-          "Microsoft.SemanticKernel.Abstractions": "1.78.0",
-          "Microsoft.SemanticKernel.Core": "1.78.0",
-          "OllamaSharp": "5.0.7"
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.SemanticKernel.Connectors.Ollama.dll": {
-            "assemblyVersion": "1.38.0.0",
-            "fileVersion": "1.38.0.0"
-          }
-        }
-      },
       "Microsoft.SemanticKernel.Connectors.OpenAI/1.78.0": {
         "dependencies": {
           "Microsoft.Extensions.AI.OpenAI": "10.5.0",
@@ -206,18 +192,6 @@
           "lib/net10.0/Npgsql.dll": {
             "assemblyVersion": "10.0.3.0",
             "fileVersion": "10.0.3.0"
-          }
-        }
-      },
-      "OllamaSharp/5.0.7": {
-        "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "10.0.2",
-          "Microsoft.Extensions.AI.Abstractions": "10.8.3"
-        },
-        "runtime": {
-          "lib/net9.0/OllamaSharp.dll": {
-            "assemblyVersion": "5.0.7.0",
-            "fileVersion": "5.0.7.0"
           }
         }
       },
@@ -401,13 +375,6 @@
       "path": "microsoft.semantickernel.connectors.azureopenai/1.78.0",
       "hashPath": "microsoft.semantickernel.connectors.azureopenai.1.78.0.nupkg.sha512"
     },
-    "Microsoft.SemanticKernel.Connectors.Ollama/1.38.0-alpha": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VSqrJbFtTF++B27eM/j9TP++bsFDdTtynFNgqr3/28cTrXYt0Fhg+iC4MJm71s1JLxA/XlEQ+pCAd9k7XTIMUg==",
-      "path": "microsoft.semantickernel.connectors.ollama/1.38.0-alpha",
-      "hashPath": "microsoft.semantickernel.connectors.ollama.1.38.0-alpha.nupkg.sha512"
-    },
     "Microsoft.SemanticKernel.Connectors.OpenAI/1.78.0": {
       "type": "package",
       "serviceable": true,
@@ -428,13 +395,6 @@
       "sha512": "sha512-7nb5YzXuvWWJxB0J8DiyL3we+X4FOctZrt0fIBnucOIaIevFEEwGQVZKtiu9olXdlNAK1eNgqSral6r/jlhI4w==",
       "path": "npgsql/10.0.3",
       "hashPath": "npgsql.10.0.3.nupkg.sha512"
-    },
-    "OllamaSharp/5.0.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8OLcHEzGKj6vAO653LA5kWBYE8iAumeNo59PUoJhrYjTWle/Bau+PimPBOhBDQ+/oXckj2CsfJ+3QU4lTaypqw==",
-      "path": "ollamasharp/5.0.7",
-      "hashPath": "ollamasharp.5.0.7.nupkg.sha512"
     },
     "OpenAI/2.10.0": {
       "type": "package",

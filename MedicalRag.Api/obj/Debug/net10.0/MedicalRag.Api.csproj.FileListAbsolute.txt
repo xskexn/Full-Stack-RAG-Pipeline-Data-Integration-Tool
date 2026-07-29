@@ -28,11 +28,9 @@ D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\D
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\Microsoft.SemanticKernel.dll
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\Microsoft.SemanticKernel.Abstractions.dll
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\Microsoft.SemanticKernel.Connectors.AzureOpenAI.dll
-D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\Microsoft.SemanticKernel.Connectors.Ollama.dll
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\Microsoft.SemanticKernel.Connectors.OpenAI.dll
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\Microsoft.SemanticKernel.Core.dll
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\Npgsql.dll
-D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\OllamaSharp.dll
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\OpenAI.dll
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\UglyToad.PdfPig.Core.dll
 D:\Docs\KensHiddenCodebase\Rag System Data Integration Tool\MedicalRag.Api\bin\Debug\net10.0\UglyToad.PdfPig.DocumentLayoutAnalysis.dll

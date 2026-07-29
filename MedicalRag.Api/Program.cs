@@ -12,12 +12,11 @@ builder.Services.AddControllers();
 builder.Services.AddSingleton<VectorStoreService>();
 builder.Services.AddHttpClient<DocumentIngestionService>();
 // adds generic HttpClient for the controller
-#pragma warning disable SKEXP0070
 builder.Services.AddHttpClient(); 
-builder.Services.AddKernel().AddOllamaChatCompletion(
+builder.Services.AddKernel().AddOpenAIChatCompletion(
         modelId: "llama3.2",
-        endpoint: new Uri("http://localhost:11434"));
-#pragma warning restore SKEXP0070
+        apiKey: "ollama", // Ollama doesn't actually check this, but the OpenAI package requires a string!
+        endpoint: new Uri("http://localhost:11434/v1")); // Added /v1 for the OpenAI compatibility layer
 
 // locks in registred services above and creates the application 
 var app = builder.Build();
