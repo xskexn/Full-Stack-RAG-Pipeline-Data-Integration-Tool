@@ -83,11 +83,11 @@
           }
         }
       },
-      "Microsoft.Extensions.AI/10.5.0": {
+      "Microsoft.Extensions.AI/10.8.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.AI.Abstractions": "10.5.0",
-          "System.Numerics.Tensors": "10.0.6"
+          "Microsoft.Extensions.AI.Abstractions": "10.8.3",
+          "System.Numerics.Tensors": "10.0.10"
         },
         "compile": {
           "lib/net10.0/Microsoft.Extensions.AI.dll": {
@@ -100,7 +100,7 @@
           }
         }
       },
-      "Microsoft.Extensions.AI.Abstractions/10.5.0": {
+      "Microsoft.Extensions.AI.Abstractions/10.8.3": {
         "type": "package",
         "compile": {
           "lib/net10.0/Microsoft.Extensions.AI.Abstractions.dll": {
@@ -212,25 +212,6 @@
           }
         }
       },
-      "Microsoft.SemanticKernel.Connectors.Ollama/1.38.0-alpha": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.AI": "9.3.0-preview.1.25114.11",
-          "Microsoft.SemanticKernel.Abstractions": "1.38.0",
-          "Microsoft.SemanticKernel.Core": "1.38.0",
-          "OllamaSharp": "5.0.7"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.SemanticKernel.Connectors.Ollama.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.SemanticKernel.Connectors.Ollama.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.SemanticKernel.Connectors.OpenAI/1.78.0": {
         "type": "package",
         "dependencies": {
@@ -275,23 +256,6 @@
         },
         "runtime": {
           "lib/net10.0/Npgsql.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OllamaSharp/5.0.7": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "9.0.0",
-          "Microsoft.Extensions.AI.Abstractions": "9.3.0-preview.1.25114.11"
-        },
-        "compile": {
-          "lib/net9.0/OllamaSharp.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net9.0/OllamaSharp.dll": {
             "related": ".xml"
           }
         }
@@ -411,7 +375,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Numerics.Tensors/10.0.6": {
+      "System.Numerics.Tensors/10.0.10": {
         "type": "package",
         "compile": {
           "lib/net10.0/System.Numerics.Tensors.dll": {
@@ -543,10 +507,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.Extensions.AI/10.5.0": {
-      "sha512": "UwUYEUqB7v74IYFRzPmjiN0i6JvHFC2P5laO5ZV2LvDRuz84+16XIkMVwT8nKyHJHT2gWOqywiTMC2pa50IrTA==",
+    "Microsoft.Extensions.AI/10.8.3": {
+      "sha512": "VdT9SiqiqmrhsVx//xnfyaaNPuMbo6+vOLm8D/EvtkZfQFpBzPyaJG7W1gFpTJQoQ4nN4k0J9j+NzpScGeEZUQ==",
       "type": "package",
-      "path": "microsoft.extensions.ai/10.5.0",
+      "path": "microsoft.extensions.ai/10.8.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -562,14 +526,14 @@
         "lib/net9.0/Microsoft.Extensions.AI.xml",
         "lib/netstandard2.0/Microsoft.Extensions.AI.dll",
         "lib/netstandard2.0/Microsoft.Extensions.AI.xml",
-        "microsoft.extensions.ai.10.5.0.nupkg.sha512",
+        "microsoft.extensions.ai.10.8.3.nupkg.sha512",
         "microsoft.extensions.ai.nuspec"
       ]
     },
-    "Microsoft.Extensions.AI.Abstractions/10.5.0": {
-      "sha512": "bb2wQ1HGatf5zdBxE28zrN4jaEVmpC+IJYChcqABTfu77YtFcJe/A4ZChjVZ0V1OF+UPYSOY8mUDI/fwEljcIA==",
+    "Microsoft.Extensions.AI.Abstractions/10.8.3": {
+      "sha512": "K0B05oApxmviWalNHPMBBcRC7erKiDATz3ENNR/jqTR9JwIwLRefgDhj2jCRwL1aca99pXUe0qyQC73/xIuZig==",
       "type": "package",
-      "path": "microsoft.extensions.ai.abstractions/10.5.0",
+      "path": "microsoft.extensions.ai.abstractions/10.8.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -585,7 +549,7 @@
         "lib/net9.0/Microsoft.Extensions.AI.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.AI.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.AI.Abstractions.xml",
-        "microsoft.extensions.ai.abstractions.10.5.0.nupkg.sha512",
+        "microsoft.extensions.ai.abstractions.10.8.3.nupkg.sha512",
         "microsoft.extensions.ai.abstractions.nuspec"
       ]
     },
@@ -710,23 +674,6 @@
         "microsoft.semantickernel.connectors.azureopenai.nuspec"
       ]
     },
-    "Microsoft.SemanticKernel.Connectors.Ollama/1.38.0-alpha": {
-      "sha512": "VSqrJbFtTF++B27eM/j9TP++bsFDdTtynFNgqr3/28cTrXYt0Fhg+iC4MJm71s1JLxA/XlEQ+pCAd9k7XTIMUg==",
-      "type": "package",
-      "path": "microsoft.semantickernel.connectors.ollama/1.38.0-alpha",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "NUGET.md",
-        "icon.png",
-        "lib/net8.0/Microsoft.SemanticKernel.Connectors.Ollama.dll",
-        "lib/net8.0/Microsoft.SemanticKernel.Connectors.Ollama.xml",
-        "lib/netstandard2.0/Microsoft.SemanticKernel.Connectors.Ollama.dll",
-        "lib/netstandard2.0/Microsoft.SemanticKernel.Connectors.Ollama.xml",
-        "microsoft.semantickernel.connectors.ollama.1.38.0-alpha.nupkg.sha512",
-        "microsoft.semantickernel.connectors.ollama.nuspec"
-      ]
-    },
     "Microsoft.SemanticKernel.Connectors.OpenAI/1.78.0": {
       "sha512": "e+5WNvoDPmd/ZmpWJnBv2QMJ6tP/ueVVWgh/r0sAKQk1gd+gDdxz9sc41UU1Lb7Qd/bDJwClkzp/4AZ2wc7UNg==",
       "type": "package",
@@ -782,28 +729,6 @@
         "npgsql.10.0.3.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
-      ]
-    },
-    "OllamaSharp/5.0.7": {
-      "sha512": "8OLcHEzGKj6vAO653LA5kWBYE8iAumeNo59PUoJhrYjTWle/Bau+PimPBOhBDQ+/oXckj2CsfJ+3QU4lTaypqw==",
-      "type": "package",
-      "path": "ollamasharp/5.0.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "Ollama.png",
-        "README.md",
-        "lib/net8.0/OllamaSharp.dll",
-        "lib/net8.0/OllamaSharp.xml",
-        "lib/net9.0/OllamaSharp.dll",
-        "lib/net9.0/OllamaSharp.xml",
-        "lib/netstandard2.0/OllamaSharp.dll",
-        "lib/netstandard2.0/OllamaSharp.xml",
-        "lib/netstandard2.1/OllamaSharp.dll",
-        "lib/netstandard2.1/OllamaSharp.xml",
-        "ollamasharp.5.0.7.nupkg.sha512",
-        "ollamasharp.nuspec"
       ]
     },
     "OpenAI/2.10.0": {
@@ -1020,10 +945,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Numerics.Tensors/10.0.6": {
-      "sha512": "DOZ8Z8CxHVWU8gSo4ZQ8sCAPIQb+agp56ISuMiu39WWZiV+reZwn9NM1tj4lRDfqLaOAinF6zTi0csmFBQes9Q==",
+    "System.Numerics.Tensors/10.0.10": {
+      "sha512": "9Ildb4Y9maDztB0ZRGxsNShbpCQ2Tjv2dr4IjskBxpTGhH7aIz1+oC+Hl833ASs/htWwsH6myNe+sRpeyCzeMQ==",
       "type": "package",
-      "path": "system.numerics.tensors/10.0.6",
+      "path": "system.numerics.tensors/10.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1044,7 +969,7 @@
         "lib/net9.0/System.Numerics.Tensors.xml",
         "lib/netstandard2.0/System.Numerics.Tensors.dll",
         "lib/netstandard2.0/System.Numerics.Tensors.xml",
-        "system.numerics.tensors.10.0.6.nupkg.sha512",
+        "system.numerics.tensors.10.0.10.nupkg.sha512",
         "system.numerics.tensors.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1053,8 +978,10 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "Microsoft.AspNetCore.OpenApi >= 10.0.10",
+      "Microsoft.Extensions.AI >= 10.8.3",
+      "Microsoft.Extensions.AI.Abstractions >= 10.8.3",
       "Microsoft.SemanticKernel >= 1.78.0",
-      "Microsoft.SemanticKernel.Connectors.Ollama >= 1.38.0-alpha",
+      "Microsoft.SemanticKernel.Connectors.OpenAI >= 1.78.0",
       "Npgsql >= 10.0.3",
       "PdfPig >= 0.1.15",
       "Pgvector >= 0.3.2"
@@ -1109,13 +1036,21 @@
             "target": "Package",
             "version": "[10.0.10, )"
           },
+          "Microsoft.Extensions.AI": {
+            "target": "Package",
+            "version": "[10.8.3, )"
+          },
+          "Microsoft.Extensions.AI.Abstractions": {
+            "target": "Package",
+            "version": "[10.8.3, )"
+          },
           "Microsoft.SemanticKernel": {
             "target": "Package",
             "version": "[1.78.0, )"
           },
-          "Microsoft.SemanticKernel.Connectors.Ollama": {
+          "Microsoft.SemanticKernel.Connectors.OpenAI": {
             "target": "Package",
-            "version": "[1.38.0-alpha, )"
+            "version": "[1.78.0, )"
           },
           "Npgsql": {
             "target": "Package",

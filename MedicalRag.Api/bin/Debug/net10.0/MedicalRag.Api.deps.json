@@ -9,6 +9,8 @@
       "MedicalRag.Api/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "10.0.10",
+          "Microsoft.Extensions.AI": "10.8.3",
+          "Microsoft.Extensions.AI.Abstractions": "10.8.3",
           "Microsoft.SemanticKernel": "1.78.0",
           "Microsoft.SemanticKernel.Connectors.Ollama": "1.38.0-alpha",
           "Npgsql": "10.0.3",
@@ -71,29 +73,29 @@
           }
         }
       },
-      "Microsoft.Extensions.AI/10.5.0": {
+      "Microsoft.Extensions.AI/10.8.3": {
         "dependencies": {
-          "Microsoft.Extensions.AI.Abstractions": "10.5.0",
-          "System.Numerics.Tensors": "10.0.6"
+          "Microsoft.Extensions.AI.Abstractions": "10.8.3",
+          "System.Numerics.Tensors": "10.0.10"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.AI.dll": {
-            "assemblyVersion": "10.5.0.0",
-            "fileVersion": "10.500.26.21304"
+            "assemblyVersion": "10.8.0.0",
+            "fileVersion": "10.800.326.37702"
           }
         }
       },
-      "Microsoft.Extensions.AI.Abstractions/10.5.0": {
+      "Microsoft.Extensions.AI.Abstractions/10.8.3": {
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.AI.Abstractions.dll": {
-            "assemblyVersion": "10.5.0.0",
-            "fileVersion": "10.500.26.21304"
+            "assemblyVersion": "10.8.0.0",
+            "fileVersion": "10.800.326.37702"
           }
         }
       },
       "Microsoft.Extensions.AI.OpenAI/10.5.0": {
         "dependencies": {
-          "Microsoft.Extensions.AI.Abstractions": "10.5.0",
+          "Microsoft.Extensions.AI.Abstractions": "10.8.3",
           "OpenAI": "2.10.0"
         },
         "runtime": {
@@ -105,7 +107,7 @@
       },
       "Microsoft.Extensions.VectorData.Abstractions/10.1.0": {
         "dependencies": {
-          "Microsoft.Extensions.AI.Abstractions": "10.5.0"
+          "Microsoft.Extensions.AI.Abstractions": "10.8.3"
         },
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.VectorData.Abstractions.dll": {
@@ -137,7 +139,7 @@
       "Microsoft.SemanticKernel.Abstractions/1.78.0": {
         "dependencies": {
           "Microsoft.Bcl.HashCode": "1.1.1",
-          "Microsoft.Extensions.AI": "10.5.0",
+          "Microsoft.Extensions.AI": "10.8.3",
           "Microsoft.Extensions.VectorData.Abstractions": "10.1.0"
         },
         "runtime": {
@@ -162,7 +164,7 @@
       },
       "Microsoft.SemanticKernel.Connectors.Ollama/1.38.0-alpha": {
         "dependencies": {
-          "Microsoft.Extensions.AI": "10.5.0",
+          "Microsoft.Extensions.AI": "10.8.3",
           "Microsoft.SemanticKernel.Abstractions": "1.78.0",
           "Microsoft.SemanticKernel.Core": "1.78.0",
           "OllamaSharp": "5.0.7"
@@ -190,7 +192,7 @@
       "Microsoft.SemanticKernel.Core/1.78.0": {
         "dependencies": {
           "Microsoft.SemanticKernel.Abstractions": "1.78.0",
-          "System.Numerics.Tensors": "10.0.6"
+          "System.Numerics.Tensors": "10.0.10"
         },
         "runtime": {
           "lib/net10.0/Microsoft.SemanticKernel.Core.dll": {
@@ -210,7 +212,7 @@
       "OllamaSharp/5.0.7": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "10.0.2",
-          "Microsoft.Extensions.AI.Abstractions": "10.5.0"
+          "Microsoft.Extensions.AI.Abstractions": "10.8.3"
         },
         "runtime": {
           "lib/net9.0/OllamaSharp.dll": {
@@ -292,11 +294,11 @@
           }
         }
       },
-      "System.Numerics.Tensors/10.0.6": {
+      "System.Numerics.Tensors/10.0.10": {
         "runtime": {
           "lib/net10.0/System.Numerics.Tensors.dll": {
-            "assemblyVersion": "10.0.0.6",
-            "fileVersion": "10.0.626.17701"
+            "assemblyVersion": "10.0.0.10",
+            "fileVersion": "10.0.1026.32716"
           }
         }
       }
@@ -343,19 +345,19 @@
       "path": "microsoft.bcl.hashcode/1.1.1",
       "hashPath": "microsoft.bcl.hashcode.1.1.1.nupkg.sha512"
     },
-    "Microsoft.Extensions.AI/10.5.0": {
+    "Microsoft.Extensions.AI/10.8.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UwUYEUqB7v74IYFRzPmjiN0i6JvHFC2P5laO5ZV2LvDRuz84+16XIkMVwT8nKyHJHT2gWOqywiTMC2pa50IrTA==",
-      "path": "microsoft.extensions.ai/10.5.0",
-      "hashPath": "microsoft.extensions.ai.10.5.0.nupkg.sha512"
+      "sha512": "sha512-VdT9SiqiqmrhsVx//xnfyaaNPuMbo6+vOLm8D/EvtkZfQFpBzPyaJG7W1gFpTJQoQ4nN4k0J9j+NzpScGeEZUQ==",
+      "path": "microsoft.extensions.ai/10.8.3",
+      "hashPath": "microsoft.extensions.ai.10.8.3.nupkg.sha512"
     },
-    "Microsoft.Extensions.AI.Abstractions/10.5.0": {
+    "Microsoft.Extensions.AI.Abstractions/10.8.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bb2wQ1HGatf5zdBxE28zrN4jaEVmpC+IJYChcqABTfu77YtFcJe/A4ZChjVZ0V1OF+UPYSOY8mUDI/fwEljcIA==",
-      "path": "microsoft.extensions.ai.abstractions/10.5.0",
-      "hashPath": "microsoft.extensions.ai.abstractions.10.5.0.nupkg.sha512"
+      "sha512": "sha512-K0B05oApxmviWalNHPMBBcRC7erKiDATz3ENNR/jqTR9JwIwLRefgDhj2jCRwL1aca99pXUe0qyQC73/xIuZig==",
+      "path": "microsoft.extensions.ai.abstractions/10.8.3",
+      "hashPath": "microsoft.extensions.ai.abstractions.10.8.3.nupkg.sha512"
     },
     "Microsoft.Extensions.AI.OpenAI/10.5.0": {
       "type": "package",
@@ -469,12 +471,12 @@
       "path": "system.memory.data/10.0.3",
       "hashPath": "system.memory.data.10.0.3.nupkg.sha512"
     },
-    "System.Numerics.Tensors/10.0.6": {
+    "System.Numerics.Tensors/10.0.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DOZ8Z8CxHVWU8gSo4ZQ8sCAPIQb+agp56ISuMiu39WWZiV+reZwn9NM1tj4lRDfqLaOAinF6zTi0csmFBQes9Q==",
-      "path": "system.numerics.tensors/10.0.6",
-      "hashPath": "system.numerics.tensors.10.0.6.nupkg.sha512"
+      "sha512": "sha512-9Ildb4Y9maDztB0ZRGxsNShbpCQ2Tjv2dr4IjskBxpTGhH7aIz1+oC+Hl833ASs/htWwsH6myNe+sRpeyCzeMQ==",
+      "path": "system.numerics.tensors/10.0.10",
+      "hashPath": "system.numerics.tensors.10.0.10.nupkg.sha512"
     }
   }
 }
