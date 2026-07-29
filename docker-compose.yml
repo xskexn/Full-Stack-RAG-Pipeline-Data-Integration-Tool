@@ -1,3 +1,4 @@
+# Sets up PostgreSQL database with pgVector extension
 version: '3.8'
 
 services:
@@ -10,7 +11,7 @@ services:
       POSTGRES_PASSWORD: postgrespassword
       POSTGRES_DB: medical_rag
     ports:
-      - "5433:5432" # <-- Changed the first number to 5433
+      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 

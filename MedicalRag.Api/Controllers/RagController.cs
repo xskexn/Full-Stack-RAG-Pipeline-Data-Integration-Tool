@@ -31,15 +31,18 @@ public class RagController : ControllerBase
         _httpClient = httpClient;
     }
 
+    // API endpoints that listens to incoming uploaded pdfs, validates and sends it to vector database
     [HttpPost("upload")]
-
+    // asynchronous endpoint waits until the doc finish parsing while allowing further use of the serve other pdfs
     public async Task<IActionResult> UploadDocument(IFormFile file, [FromForm] string title, [FromForm] string? pmid)
     {
+        // checking if the file exist or is empty if so handles it gracefully and throws a 400 error code
         if (file == null || file.Length == 0) return BadRequest("No file uploaded.\nPlease upload a valid .pdf file.");
 
         using var stream = file.OpenReadStream();
         var chunkCount = await _ingestionService.ProcessPdfAsync(stream, title, pmid);
-
+        
+        // if ingestion service finishes without errors a 200 success code and message returned to user terminal 
         return Ok(new { Message = "Document processed successfully!", ChunksSaved = chunkCount }); 
     }
 
@@ -52,8 +55,8 @@ public class RagController : ControllerBase
         var queryEmbedding = await GenerateQueryEmbeddingAsync(request.Question);
         
         // Fetch top-K similar medical chunks from pgvector
-        var topContext = await _vectorStore.SearchSimilarChunksAsync(queryEmbedding, 3);
-        var combinedContext = string.Join("\n\n", topContext); 
+        var topContexts = await _vectorStore.SearchSimilarChunksAsync(queryEmbedding, 10);
+        var combinedContext = string.Join("\n\n", topContexts); 
         
         // assemble grounded prompt
         var systemPrompt = $"""
@@ -70,7 +73,7 @@ public class RagController : ControllerBase
         var response = await _chatService.GetChatMessageContentAsync(chatHistory);
         
         // Return response with source citations
-        return Ok(new { Answer = response.Content, Sources = topContext });
+        return Ok(new { Answer = response.Content, Sources = topContexts });
     }
 
     // helper method to convert string question into a vector array
@@ -93,8 +96,6 @@ public class RagController : ControllerBase
     }
 
 }
-
-
 
 // Defining datatype of expected from this endpoint
 public record QuestionRequest(string Question);

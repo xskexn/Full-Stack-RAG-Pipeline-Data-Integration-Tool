@@ -15,8 +15,8 @@ builder.Services.AddHttpClient<DocumentIngestionService>();
 builder.Services.AddHttpClient(); 
 builder.Services.AddKernel().AddOpenAIChatCompletion(
         modelId: "llama3.2",
-        apiKey: "ollama", // Ollama doesn't actually check this, but the OpenAI package requires a string!
-        endpoint: new Uri("http://localhost:11434/v1")); // Added /v1 for the OpenAI compatibility layer
+        apiKey: "ollama", 
+        endpoint: new Uri("http://localhost:11434/v1"));
 
 // locks in registred services above and creates the application 
 var app = builder.Build();
@@ -30,7 +30,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.MapControllers();
 
-// Automatically initialises pgvector extension and table on startup
+// automatically initialises pgvector extension and table on startup
 InitializeDatabase(app.Configuration.GetConnectionString("DefaultConnection")!);
 
 app.Run();

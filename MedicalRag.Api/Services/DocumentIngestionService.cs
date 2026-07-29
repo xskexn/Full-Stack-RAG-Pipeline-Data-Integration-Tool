@@ -47,10 +47,11 @@ public class DocumentIngestionService
             var embedding = await GenerateEmbeddingFromOllamaAsync(chunkText);
             await _vectorStore.SaveChunkAsync(documentTitle, pmidDoi, i, chunkText, embedding);
         }
-        // returns totoal number of processed chunks
+        // returns total number of processed chunks
         return chunks.Count; 
     }
 
+    // Sclices the document into bite-sized pieces: Sliding window token algorithm
     private List<string> ChunkText(string text, int chunkSize, int overlap)
     {
         var chunks = new List<string>();
@@ -58,14 +59,17 @@ public class DocumentIngestionService
         // Scans through the enire document lenght
         while (startIndex < text.Length)
         {
+            // preventing outOfBound EOF errors from crashign server
             int length = Math.Min(chunkSize, text.Length - startIndex);
             var chunk = text.Substring(startIndex, length).Trim();
             
+            // preventing redundant whiteLines from entering the db 
             if (!string.IsNullOrWhiteSpace(chunk))
             {
                 chunks.Add(chunk);
             }
 
+            // Sliding window concept moves forward by chunk size - overlap
             startIndex += chunkSize - overlap;
             if (startIndex >= text.Length - overlap) break;
         }

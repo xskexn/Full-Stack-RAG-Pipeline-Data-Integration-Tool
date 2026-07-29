@@ -1,23 +1,27 @@
+// Database layer for PostgreSQL keeping SQL commands isolated from core logic
 using Npgsql;
 using Pgvector;
 
 namespace MedicalRag.Api.Services;
 
+// injects IConfiguration interface to access application 
 public class VectorStoreService
 {
     private readonly NpgsqlDataSource _dataSource;
 
     public VectorStoreService(IConfiguration config)
     {
+        // lookup and retrival for DefaultConnection
         var connectionString = config.GetConnectionString("DefaultConnection")!;
         
-        // Build a data source and explicitly register the pgvector extension
+        // builds a data source and explicitly register the pgvector extension
         var dataSourceBuilder = new NpgsqlDataSourceBuilder(connectionString);
         dataSourceBuilder.UseVector(); 
         
         _dataSource = dataSourceBuilder.Build();
     }
 
+    // extract specific chunks of medical text, metadata and mathetical vector storing it storing into the db
     public async Task SaveChunkAsync(string title, string? pmid, int index, string text, float[] embedding)
     {
         // Open the connection using the pre-configured data source
@@ -28,6 +32,7 @@ public class VectorStoreService
             VALUES (@title, @pmid, @index, @text, @embedding)";
 
         await using var cmd = new NpgsqlCommand(query, conn);
+        // maps c# variables to SQL parameters
         cmd.Parameters.AddWithValue("title", title);
         cmd.Parameters.AddWithValue("pmid", pmid ?? (object)DBNull.Value);
         cmd.Parameters.AddWithValue("index", index);
@@ -37,6 +42,7 @@ public class VectorStoreService
         await cmd.ExecuteNonQueryAsync();
     }
 
+    // retrival step takes in vector representation of user question and finds most semantically relevant medical chunk stored in the db
     public async Task<List<string>> SearchSimilarChunksAsync(float[] queryEmbedding, int topK = 3)
     {
         await using var conn = await _dataSource.OpenConnectionAsync();
@@ -52,10 +58,14 @@ public class VectorStoreService
         cmd.Parameters.AddWithValue("queryEmbedding", new Vector(queryEmbedding));
         cmd.Parameters.AddWithValue("topK", topK);
 
+        // returns results in a list
         var results = new List<string>();
+
+        // reads the returned rows
         await using var reader = await cmd.ExecuteReaderAsync();
         while (await reader.ReadAsync())
         {
+            // formats the output prepends doc title and source doc, adds it to the return list
             var text = reader.GetString(0);
             var title = reader.GetString(1);
             results.Add($"[Source: {title}]\n{text}");
